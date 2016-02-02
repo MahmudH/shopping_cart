@@ -1,0 +1,11 @@
+<%= form_for @stock do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :qty %>
+  <%= f.text_field :qty %>
+  <%= f.submit 'Update item' %>
+<% end %>

@@ -46,4 +46,17 @@ feature 'shopping cart' do
     end
   end
 
+  context 'editing an item' do
+    before { Stock.create name: 'Angular Toe Court Shoes' }
+
+    scenario 'let a user edit an item in the stock' do
+      visit '/stocks'
+      click_link 'Edit item'
+      fill_in 'Name', with: 'Almond Toe Court Shoes'
+      click_button 'Update item'
+      expect(page).to have_content 'Almond Toe Court Shoes'
+      expect(current_path).to eq '/stocks'
+    end
+  end
+
 end
