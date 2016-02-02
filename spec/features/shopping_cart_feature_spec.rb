@@ -59,4 +59,15 @@ feature 'shopping cart' do
     end
   end
 
+  context 'deleting an item from from stock list' do
+    before { Stock.create name: 'Almond Toe Court Shoes' }
+
+    scenario 'removes an item when a user clicks the delete click' do
+      visit '/stocks'
+      click_link 'Delete item'
+      expect(page).not_to have_content 'Almond Toe Court Shoes'
+      expect(page).to have_content 'Item deleted successfully'
+    end
+  end
+
 end

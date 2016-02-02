@@ -27,6 +27,13 @@ class StocksController < ApplicationController
     redirect_to '/stocks'
   end
 
+  def destroy
+    @stock = Stock.find(params[:id])
+    @stock.destroy
+    flash[:notice] = 'Item deleted successfully'
+    redirect_to '/stocks'
+  end
+
   private
 
   def stock_params
