@@ -1,0 +1,5 @@
+<%= form_for [@product, @cart] do |f| %>
+  <%= f.label :qty %>
+  <%= f.select :qty, (1..@product.qty) %>
+  <%= f.submit "Add to cart" %>
+<% end %>

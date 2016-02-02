@@ -1,4 +1,4 @@
-<%= form_for @stock do |f| %>
+<%= form_for @product do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :category %>
@@ -7,5 +7,5 @@
   <%= f.text_field :price %>
   <%= f.label :qty %>
   <%= f.text_field :qty %>
-  <%= f.submit 'Create item' %>
+  <%= f.submit 'Update item' %>
 <% end %>
