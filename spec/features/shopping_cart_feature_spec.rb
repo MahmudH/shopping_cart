@@ -34,4 +34,16 @@ feature 'shopping cart' do
       expect(current_path).to eq '/stocks'
     end
   end
+
+  context 'viewing items' do
+    let!(:shoes){ Stock.create(name: 'Almond Toe Court Shoes', category: 'Women\s footwear') }
+
+    scenario 'lets a user view the item' do
+      visit '/stocks'
+      click_link 'Almond Toe Court Shoes'
+      expect(page).to have_content 'Almond Toe Court Shoes'
+      expect(current_path).to eq "/stocks/#{shoes.id}"
+    end
+  end
+
 end

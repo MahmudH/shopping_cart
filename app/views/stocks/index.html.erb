@@ -1,6 +1,6 @@
 <% if @stocks.any? %>
   <% @stocks.each do |stock_item| %>
-    <h2> <%= stock_item.name %> </h2>
+    <h2> <%= link_to stock_item.name, stock_path(stock_item) %> </h2>
   <% end %>
 <% else %>
   No clothing items availiable

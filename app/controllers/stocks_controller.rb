@@ -4,11 +4,16 @@ class StocksController < ApplicationController
   end
 
   def new
+    @stock = Stock.new
   end
 
   def create
-    Stock.create(stock_params)
+    @stock = Stock.create(stock_params)
     redirect_to '/stocks'
+  end
+
+  def show
+    @stock = Stock.find(params[:id])
   end
 
   private
